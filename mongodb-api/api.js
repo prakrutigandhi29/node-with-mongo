@@ -21,6 +21,11 @@ app.put('/:name',async(req,res)=>{
     const data=await db.updateOne({name:req.params.name},{$set:req.body})
     console.log(data);
 })
+app.patch('/:name',async(req,res)=>{
+    const db=await dbConnect();
+    const data=await db.updateOne({name:req.params.name},{$set:req.body})
+    console.log(data);
+})
 
 app.delete('/:id',async(req,res)=>{
     const db=await dbConnect();
